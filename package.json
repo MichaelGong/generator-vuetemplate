@@ -1,6 +1,6 @@
 {
   "name": "generator-vuetemplate",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "基于vue+webpack的项目模板",
   "main": "index.js",
   "scripts": {
