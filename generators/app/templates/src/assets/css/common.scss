@@ -1,0 +1,383 @@
+@import "./mix.scss";
+* {
+    tap-highlight-color: transparent;
+    -webkit-tap-highlight-color: transparent;
+    -ms-tap-highlight-color: transparent;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0
+}
+
+a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    vertical-align: baseline
+}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
+    display: block
+}
+ol,li,ul {
+    list-style: none
+}
+html {
+    -webkit-text-size-adjust: 100%;
+    height: 100%;
+    background-color: #f7f7f8;
+}
+a,div,header,span {
+    -webkit-tap-highlight-color: rgba(255,255,255,0)
+}
+blockquote,q {
+    quotes: none
+}
+blockquote:after,blockquote:before,q:after,q:before {
+    content: '';
+    content: none
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+input,textarea {
+    outline: 0;
+    resize: none;
+    font-family: PingFangSC,"Microsoft YaHei",Helvetica,"Droid Sans",Arial,sans-serif;
+}
+body {
+    -webkit-text-size-adjust: 100%;
+    background: #fff;
+    min-width: 320px;
+    margin: auto;
+    // height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    overflow-scrolling: touch;
+    -webkit-font-smoothing: antialiased;
+    font-family: PingFangSC,"Microsoft YaHei",Helvetica,"Droid Sans",Arial,sans-serif;
+    user-select: none;
+    -webkit-user-select: none;
+}
+html,body,#app, .container {
+    min-height: 100%;
+    height: 100%;
+    // position: relative;
+}
+select {
+    background: transparent;
+}
+// .noscroll,
+.noscroll body .noscroll #router{
+    overflow: hidden;
+    min-height: 100%;
+    height: 100%;
+}
+.noscroll body {
+    position: relative;
+}
+#app {
+  width: 100%;
+  margin: auto;
+  min-height: 100%;
+}
+
+.width-full {
+  width: 100%;
+}
+.float-left {
+    float: left;
+}
+.float-right {
+    float: right;
+}
+.clearfix:after{
+    display:block;
+    clear:both;
+    visibility:hidden;
+    height:0;
+    content:" ";
+    font-size:0;
+}
+.fixed-full {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.ani {
+    &.down {
+        animation: down .3s ease-out;
+        animation-fill-mode: both;
+    }
+    &.left2right {
+        animation: left2right .3s ease-out;
+        animation-fill-mode: both;
+    }
+    &.right2left {
+        animation: right2left .3s ease-out;
+        animation-fill-mode: both;        
+    }
+    &.right2out {
+        animation: right2out .3s ease-out;
+        animation-fill-mode: both;        
+    }
+    &.furight2left {
+        animation: furight2left .3s ease-out;
+        animation-fill-mode: both;  
+    }
+}
+@keyframes down {
+    0% {
+        transform: translate3d(0, -100%, 0)
+    }
+    100% {
+        transform: translate3d(0, 0, 0)            
+    }
+}
+@keyframes left2right {
+    0% {
+        transform: translate3d(100%, 0, 0)
+    }
+    100% {
+        transform: translate3d(0, 0, 0)            
+    }
+}
+@keyframes right2left {
+    100% {
+        transform: translate3d(100%, 0, 0)      
+    }
+}
+@keyframes right2out {
+    0% {
+        transform: translate3d(0, 0, 0)
+    }
+    100% {
+        transform: translate3d(-100%, 0, 0)            
+    }
+}
+@keyframes furight2left {
+    0% {
+        transform: translate3d(-100%, 0, 0)
+    }
+    100% {
+        transform: translate3d(0, 0, 0)           
+    }
+}
+
+
+@keyframes slideInUp {
+    from {
+        transform: translate3d(0, 100%, 0);
+        visibility: visible;
+    }
+    to {
+        transform: translate3d(0, 0, 0);
+    }
+}
+@keyframes slideOutDown {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    visibility: hidden;
+    transform: translate3d(0, 100%, 0);
+  }
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+@keyframes slideInDown {
+    from {
+        transform: translate3d(0, -100%, 0);
+        visibility: visible;
+    }
+
+    to {
+        transform: translate3d(0, 0, 0);
+    }
+}
+@keyframes slideOutUp {
+    from {
+        transform: translate3d(0, 0, 0);
+    }
+
+    to {
+        visibility: hidden;
+        transform: translate3d(0, -100%, 0);
+    }
+}
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        -webkit-transform: scale3d(.3, .3, .3);
+        transform: scale3d(.3, .3, .3);
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+$aniTime: 0.3s;
+.animated {
+  animation-duration: $aniTime;
+  animation-fill-mode: both;
+}
+.fadeOut {
+    animation-name: fadeOut;
+}
+.fadeIn {
+    animation-name: fadeIn;
+}
+.zoomIn {
+    animation-name: zoomIn;
+}
+
+.chooseAni-enter, .chooseAni-leave {
+    
+}
+.chooseAni-enter-active {
+    transition: all $aniTime;
+    .slideInUp {
+        animation-name: slideInUp;
+        animation-fill-mode: both;
+    }
+    .slideInDown {
+        animation-name: slideInDown;
+        animation-fill-mode: both;        
+    }
+    .choose-pop-bg {
+        animation: fadeIn $aniTime;
+        animation-fill-mode: both;
+    }
+}
+.chooseAni-leave-active {
+    transition: all $aniTime;    
+    .slideInUp {
+        animation-name: slideOutDown;
+        animation-fill-mode: both;
+    }
+    .slideInDown {
+        animation-name: slideOutUp;
+        animation-fill-mode: both;        
+    }
+    .choose-pop-bg {
+        animation: fadeOut $aniTime;
+        animation-fill-mode: both;        
+    }
+}
+.goUpAni {
+    animation-duration: $aniTime;
+    animation-fill-mode: both;
+    &.slideInUp {
+        animation-name: slideInUp2;
+        animation-fill-mode: both;
+    }
+}
+.goDownAni {
+    animation-duration: $aniTime;
+    animation-fill-mode: both;
+    &.slideOutDown {
+        animation-name: slideOutDown2;
+        animation-fill-mode: both;
+    }
+}
+@keyframes slideInUp2 {
+    from {
+        transform: translate3d(0, 150%, 0);
+        visibility: visible;
+        opacity: 0;
+    }
+    to {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+}
+@keyframes slideOutDown2 {
+    from {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+        visibility: hidden;
+        transform: translate3d(0, 150%, 0);
+    }
+}
+.for-ani-route{
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    z-index: 200;
+}
+.routerContainer {
+    min-height: 100%;
+    background: #f8f8f8;
+}
+
+.flex {
+    display: flex;
+    &.flex-h { // 子元素水平排雷
+        flex-direction: row;
+    }
+    &.flex-h-c { // 子元素水平居中
+        justify-content: center;
+    }
+    &.flex-h-start { // 子元素靠前
+        justify-content: flex-start;
+    }
+    &.flex-h-end { // 子元素靠后
+        justify-content: flex-end;
+    }
+    &.flex-h-between { // 子元素两头靠边，中间等距
+        justify-content: space-between;
+    }
+    &.flex-h-around { // 子元素周围的距离都是相等的
+        justify-content: space-around;
+    }
+    
+    &.flex-v { // 子元素垂直排列
+        flex-direction: column;
+    }
+    &.flex-v-c { // 子元素垂直居中
+        align-items: center;
+    }
+    &.flex-v-start {
+        align-items: flex-start;
+    }
+    &.flex-v-end {
+        align-items: flex-end;        
+    }
+    &.flex-v-baseline {
+        align-items: baseline;
+    }
+    &.flex-v-stretch {
+        align-items: stretch;
+    }
+    &.flex-wrap {
+         flex-wrap: wrap;
+    }
+}
+
+
+

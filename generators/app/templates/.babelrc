@@ -1,0 +1,22 @@
+{
+  "presets": [
+    ["env", { 
+      "modules": false,
+      "targets": {
+        "browsers": ["> 1%", "last 10 versions"]
+      },
+      "useBuiltIns": true
+    }],
+    "stage-1",
+    "es2015"
+  ],
+  "plugins": [
+    ["transform-runtime", {
+      "helpers": false,
+      "polyfill": true
+    }], ["component", [
+      { "libraryName": "mint-ui", "style": true }
+    ]]
+  ],
+  "comments": false
+}

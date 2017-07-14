@@ -1,0 +1,116 @@
+//设计稿宽度
+//@function：函数  @mixin：混合
+$screen:750;
+@function px2rem($px) {
+    @return #{$px/($screen/10)}rem
+}
+
+@function px2remN($px) {
+    @return #{$px/($screen/10)}rem
+}
+
+// font-size: #{$font-size/($screen/10)}rem;
+@mixin font-dpr($font-size) {
+    font-size: $font-size * 1px;
+    [data-dpr="2"] & {
+        font-size: $font-size * 2px;
+    }
+    [data-dpr="3"] & {
+        font-size: $font-size * 3px;
+    }
+}
+
+// 1px 仔细阅读后使用哟，以免出错
+@mixin one-left($color:#E3E5E9, $type:solid) {
+    &:before {
+        content: " ";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 1px;
+        bottom: 0;
+        border-left: 1px $type $color;
+        color: $color;
+        transform-origin: 0 0;
+        transform: scaleX(0.5);
+    }
+}
+
+@mixin one-right($color:#E3E5E9, $type:solid) {
+    &:after {
+        content: " ";
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 1px;
+        bottom: 0;
+        border-right: 1px $type $color;
+        color: $color;
+        transform-origin: 100% 0;
+        transform: scaleX(0.5);
+    }
+}
+
+@mixin one-top($color:#E3E5E9, $type:solid) {
+    &:before {
+        content: " ";
+        position: absolute;
+        left: 0;
+        top: -1px;
+        right: 0;
+        height: 1px;
+        border-top: 1px $type $color;
+        color: $color;
+        transform-origin: 0 0;
+        transform: scaleY(0.5);
+    }
+}
+
+@mixin one-bottom($color:#E3E5E9, $type:solid) {
+    &:after {
+        content: " ";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        height: 1px;
+        border-bottom: 1px $type $color;
+        color: $color;
+        transform-origin: 0 100%;
+        transform: scaleY(0.5);
+    }
+}
+
+@mixin one-border($color:#E3E5E9, $type:solid, $radius:0) {
+    &:after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 200%;
+        height: 200%;
+        border: 1px $type $color;
+        border-radius: $radius;
+        transform: translate(-50%, -50%) scale(.5);
+    }
+}
+
+@mixin icon-i-spirit($width:10, $height:10, $url:'', $left:0, $top:0, $bgwidth:400, $bgheight:400) {
+    width: px2remN($width);
+    height: px2remN($height);
+    display: inline-block;
+    background: url($url) px2remN($left) px2remN($top) no-repeat;
+    background-size: px2remN($bgwidth) px2remN($bgheight);
+}
+
+@mixin placeholderColor($color:#C6C7CE) {
+    &::-webkit-input-placeholder {
+        color: $color;
+    }
+    &::-moz-placeholder {
+        color: $color;        
+    }
+}
+
+
+@import "./global.scss";
