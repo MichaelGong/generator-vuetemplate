@@ -13,7 +13,7 @@
   "keywords": [
     "yeoman-generator"
   ],
-  "author": "MichaelGong",
+  "author": "{{author}}",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/MichaelGong/generator-vuetemplate/issues"
