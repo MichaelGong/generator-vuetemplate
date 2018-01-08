@@ -1,7 +1,7 @@
 {
-  "name": "generator-vuetemplate",
-  "version": "0.0.2",
-  "description": "基于vue+webpack的项目模板",
+  "name": "{{projectName}}",
+  "version": "{{projectVersion}}",
+  "description": "{{projectDesc}}",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
