@@ -18,7 +18,7 @@
 </style>
 <template>
 <section class="index">
-    首页
+    首页 {{projectName}}
     <div>
         <div class="btn" @click="goTest">查看公用组件api</div>
     </div>
